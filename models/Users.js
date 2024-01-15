@@ -16,12 +16,13 @@ const User = sequelize.define('user', {
     }
 });
 
-
 //Syncing Table
 //Notes: {force: true} -> drop it first, {alter: true} -> alter table
 
-User.sync( {force: true} ).then((data) => {
+User.sync().then((data) => {
     console.log('Table Created!')
 }).catch((err) => {
     console.log('Error')
 })
+
+module.exports = User;
