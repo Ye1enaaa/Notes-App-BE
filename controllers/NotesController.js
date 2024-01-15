@@ -29,6 +29,17 @@ class NotesController{
         }
         res.status(200).json({note: note})
     }
+
+    async deleteNote(req, res, id){
+        const note = await Notes.destroy({
+            where:{
+                id: id
+            }
+        })
+        res.status(200).json({
+            'msg': 'Deleted'
+        });
+    }
 }
 
 module.exports = NotesController;
