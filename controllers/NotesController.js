@@ -40,6 +40,20 @@ class NotesController{
             'msg': 'Deleted'
         });
     }
+
+    async updateTitleOfNote(req, res, id){
+        const {title} = req.body;
+        const newTitle = await Notes.update({title:title}, {
+            where:{
+                id: id
+            }
+        })
+
+        res.status(200).json({
+            msg: 'Success',
+            newTitle: title
+        });
+    }
 }
 
 module.exports = NotesController;
