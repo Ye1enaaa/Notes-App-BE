@@ -15,6 +15,7 @@ app.get(`/users`, (req,res)=> userController.fetchUsers(req, res));
 app.post(`/add-notes`, (req, res) => notesController.addNotes(req, res));
 app.get(`/all-notes`,(req, res) => notesController.fetchAllNotes(req, res));
 app.get(`/note/:id`, (req, res) => notesController.fetchANote(req, res, req.params.id));
+app.delete(`/delete-note/:id`, (req, res) => notesController.deleteNote(req, res, req.params.id));
 
 const port = 5000
 app.listen(port, ()=>{
