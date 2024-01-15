@@ -17,3 +17,5 @@ Notes.sync().then((data) => {
 }).catch((err) => {
     console.error(err)
 })
+
+module.exports = Notes;
