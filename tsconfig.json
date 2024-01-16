@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "removeComments": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "incremental": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@interfaces/*": [
+        "./src/typescript/interfaces/*",
+        "./src/typescript/interfaces"
+      ],
+      "@models/*": [
+        "./src/models/*"
+      ],
+      "@controllers/*": [
+        "./src/controllers/*"
+      ],
+      "@schemas/*": [
+        "./src/schemas/*"
+      ],
+      "@routes/*": [
+        "./src/routes/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@config": [
+        "./src/config/index.ts"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "@express": [
+        "./src/lib/express.ts"
+      ],
+    }
+  }
+}
