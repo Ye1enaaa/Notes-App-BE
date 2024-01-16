@@ -4,14 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -L",
+    "gen-env": "node src/scripts/generate-env.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "module-alias": "^2.2.3",
     "mysql2": "^3.7.0",
-    "sequelize": "^6.35.2"
+    "node": "^21.2.0",
+    "nodemon": "^3.0.2",
+    "sequelize": "^6.35.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }
