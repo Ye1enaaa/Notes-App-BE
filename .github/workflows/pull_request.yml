@@ -5,7 +5,7 @@ name: 'Pull Request Test'
 
 on:
     pull_request:
-        branches: ['develop', 'master', 'release']
+        branches: ['develop', 'main', 'release']
 
 jobs:
     test:
