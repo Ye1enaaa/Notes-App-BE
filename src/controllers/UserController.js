@@ -1,7 +1,7 @@
 const User = require("../models/Users");
 
-class UserController{
-    async addUser(req, res){
+const UserController = {
+    addUser: async (req, res) => {
         const {name, password, age} = req.body;
         const user = User.create({
             name: name,
@@ -12,9 +12,9 @@ class UserController{
         res.status(200).json({
             msg:'Success'
         })
-    }
+    },
 
-    async fetchUsers(req, res){
+    fetchUsers: async (req, res) => {
         const users = await User.findAll();
         res.status(200).json({
             users: users
