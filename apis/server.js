@@ -1,10 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const app =  express();
 const UserController = require('../controllers/UserController');
 const NotesController = require('../controllers/NotesController')
 const userController = new UserController();
 const notesController = new NotesController();
+
 app.use(express.json());
+app.use(cors());
 
 //Users API
 app.post(`/add-user`, (req,res) => userController.addUser(req, res));
