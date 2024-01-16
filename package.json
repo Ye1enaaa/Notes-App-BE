@@ -6,7 +6,14 @@
   "scripts": {
     "test": "",
     "dev": "nodemon -L",
+    "build": "tsc -p .",
+    "build:dev": "tsc -p . && node dist/server",
     "gen-env": "node src/scripts/generate-env.js"
+  },
+  "_moduleAliases": {
+    "@interfaces": "dist/typescript/interfaces",
+    "@lib": "dist/lib",
+    "@express": "dist/lib/express.ts"
   },
   "keywords": [],
   "author": "",
