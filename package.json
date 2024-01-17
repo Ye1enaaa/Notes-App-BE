@@ -11,6 +11,7 @@
     "gen-env": "node src/scripts/generate-env.js"
   },
   "_moduleAliases": {
+    "@config": "dist/config/index.js",
     "@interfaces": "dist/typescript/interfaces",
     "@TStypes": "dist/typescript/types",
     "@lib": "dist/lib",
