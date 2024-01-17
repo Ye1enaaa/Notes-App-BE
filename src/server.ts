@@ -1,14 +1,14 @@
 import 'module-alias/register';
-console.log("import 'module-alias/register';")
 import { createServer, Server } from 'http';
 import runServer from './app';
 import sequelize from '@lib/database';
+import config from '@config';
 
 const app = runServer();
 const httpServer: Server = createServer(app);
 
-const HOST: string = 'localhost';
-const PORT: number = 5000;
+const HOST: string = config.HOST;
+const PORT: number = config.PORT;
 
 sequelize.authenticate()
     .then(() => {
