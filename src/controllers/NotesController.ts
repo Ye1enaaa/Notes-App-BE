@@ -1,7 +1,8 @@
-const Notes = require("../models/Notes");
+import { Request, Response } from 'express';
+import Notes from '@models/Notes';
 
-const NotesController = {
-    addNotes: async (req, res) => {
+export default {
+    addNotes: async (req: Request, res: Response) => {
 
         const {title, body} = req.body;
 
@@ -14,7 +15,7 @@ const NotesController = {
         })
     },
 
-    fetchAllNotes: async (req, res) => {
+    fetchAllNotes: async (req: Request, res: Response) => {
 
         const notes = await Notes.findAll();
         res.status(200).json({
@@ -23,7 +24,7 @@ const NotesController = {
 
     },
 
-    fetchANote: async (req, res, id) => {
+    fetchANote: async (req: Request, res: Response, id: any) => {
 
         const note = await Notes.findByPk(id)
 
@@ -33,7 +34,7 @@ const NotesController = {
         res.status(200).json({note: note})
     },
 
-    deleteNote: async (req, res, id) => {
+    deleteNote: async (req: Request, res: Response, id: any) => {
         const note = await Notes.destroy({
             where:{
                 id: id
@@ -44,7 +45,7 @@ const NotesController = {
         });
     },
 
-    updateTitleOfNote: async (req, res, id) => {
+    updateTitleOfNote: async (req: Request, res: Response, id: any) => {
         const {title} = req.body;
         const newTitle = await Notes.update({title:title}, {
             where:{
@@ -58,5 +59,3 @@ const NotesController = {
         });
     }
 }
-
-module.exports = NotesController;

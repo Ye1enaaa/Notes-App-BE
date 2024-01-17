@@ -1,8 +1,9 @@
-const User = require("../models/Users");
+import User from '@models/Users';
+import { Request, Response } from 'express';
 
-const UserController = {
-    addUser: async (req, res) => {
-        const {name, password, age} = req.body;
+export default {
+    addUser: async (req: Request, res: Response) => {
+        const {name, password, age}: any = req.body;
         const user = User.create({
             name: name,
             password: password,
@@ -14,12 +15,10 @@ const UserController = {
         })
     },
 
-    fetchUsers: async (req, res) => {
+    fetchUsers: async (req: Request, res: Response) => {
         const users = await User.findAll();
         res.status(200).json({
             users: users
         })
     }
 }
-
-module.exports = UserController

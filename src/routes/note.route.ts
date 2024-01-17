@@ -1,5 +1,7 @@
-const router = require('express').Router();
-const notesController = require('../controllers/NotesController');
+import { Router } from 'express';
+import notesController from '@controllers/NotesController';
+
+const router = Router();
 
 //Notes API
 router.post(`/add-notes`, notesController.addNotes);
@@ -8,4 +10,4 @@ router.get(`/note/:id`, notesController.fetchANote);
 router.delete(`/delete-note/:id`, notesController.deleteNote);
 router.patch(`/edit-title/:id`, notesController.updateTitleOfNote);
 
-module.exports = router;
+export default router;
