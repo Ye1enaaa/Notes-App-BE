@@ -15,6 +15,10 @@
         "./src/typescript/interfaces/*",
         "./src/typescript/interfaces"
       ],
+      "@TStypes/*": [
+        "./src/typescript/types/*",
+        "./src/typescript/types"
+      ],
       "@models/*": [
         "./src/models/*"
       ],
